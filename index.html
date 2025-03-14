@@ -3,43 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Personal Webpage</title>
+  <title>Tianjian (James) Zhang - CV</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
     }
-    header, footer {
-      background: #333;
+    header {
+      background: #343a40;
       color: #fff;
-      padding: 1rem;
+      padding: 20px;
       text-align: center;
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin: 0 1rem;
-    }
-    nav ul li a {
+    header p a {
       color: #fff;
       text-decoration: none;
     }
+    nav {
+      background: #495057;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     section {
-      padding: 2rem;
-      margin: 1rem;
+      max-width: 800px;
+      margin: 20px auto;
       background: #fff;
+      padding: 20px;
       border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #343a40;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+    h3 {
+      margin-bottom: 5px;
+    }
+    .education-item, .experience-item, .project-item {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    a.button {
+      background: #343a40;
+      color: #fff;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -47,41 +79,172 @@
 
   <header>
     <h1>Tianjian (James) Zhang</h1>
-    <nav>
-      <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#resume">Resume</a></li>
-      </ul>
-    </nav>
+    <p>
+      <a href="mailto:tz2642@columbia.edu">tz2642@columbia.edu</a> |
+      (+1) 530-407-7864 |
+      <a href="https://www.linkedin.com/in/tjzhang5741" target="_blank">LinkedIn</a> |
+      New York, NY, 10016
+    </p>
   </header>
+
+  <nav>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#honors">Honors</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#transcript">Transcript</a>
+  </nav>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>Columbia University</h3>
+      <p>MS in Electrical Engineering, New York, NY <em>(Expected Dec 2025)</em></p>
+      <ul>
+        <li>GPA: 3.75 | Emphasis: Smart Electric Energy</li>
+        <li>Courses: Internet of Things, Data Center Processing, Control Theory, Optimization, Energy Management, Reinforcement Learning (in progress), Smart Grid Technology (in progress)</li>
+      </ul>
+    </div>
+    <div class="education-item">
+      <h3>University of California, Davis</h3>
+      <p>BS in Physics and Chemical Physics, Davis, CA <em>(Jun 2024)</em></p>
+      <ul>
+        <li>Magna Cum Laude</li>
+        <li>Minor in Mathematics</li>
+        <li>Courses: Analog Circuits, Digital Circuits, Solid State Physics, Data Acquisition, Quantum Computing, Probability, Numerical Analysis, Econophysics</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <h3>Programming Skills</h3>
+    <p>Python, C/C++, Matlab, Bash, Julia, Verilog, Stata, SQL, Powershell, LaTeX</p>
+    <h3>Frameworks</h3>
+    <p>Scipy, Pytorch, Qiskit, OpenCV, Scikit-learn, FastAPI, Networkx</p>
+    <h3>Testing Skills</h3>
+    <p>Oscilloscope, Multimeter, Function generator, Soldering, PCBA/PCB, Signal Analysis, Prototyping</p>
+    <h3>Other Skills</h3>
+    <p>FPGA, AWS, GCP, LTSpice, Simulink, Data Visualization, Solidworks, Altium, Raspberry Pi, ROS2, I2C, SPI, UART (Embedded Communication)</p>
+    <h3>Certificates</h3>
+    <p>Quantum Computing: QNickel, QKD, Quantum hardware and software</p>
+  </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <p>Here is a fake summary of my professional background:</p>
+    <div class="experience-item">
+      <h3>Columbia University, DitecT Lab</h3>
+      <p>Research Assistant, New York, NY <em>(Jan 2025 – Present)</em></p>
+      <ul>
+        <li>Assembled a scaled autonomous vehicle testbed using ROS2 and Nvidia Jetson for algorithm evaluation.</li>
+        <li>Developed and simulated control algorithms (PID/MPC) and path planning for autonomous navigation, integrating traffic signal coordination and sensor fusion using Python.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>Columbia Robotics Club</h3>
+      <p>Electronics Lead, New York, NY <em>(Sep 2024 – Present)</em></p>
+      <ul>
+        <li>Led a team of 10 students in the electrical subteam for the annual PacBot competition.</li>
+        <li>Designed robot structure in CAD, implemented PID control algorithms, upgraded schematics, designed PCB layouts, and assisted in motor integration, achieving a 75% performance improvement.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>Shanghai Sailong Biotechnology</h3>
+      <p>Intern, Shanghai, CN <em>(Jul 2024 – Aug 2024)</em></p>
+      <ul>
+        <li>Applied a Transformer model to discover 10 organic optoelectronic materials, improving photovoltaic efficiency by 5% compared with traditional approaches.</li>
+        <li>Built a website to design over 100 organic materials using FastAPI and Streamlit.</li>
+        <li>Created a script to automatically generate materials and evaluate them with chemistry tools and Python.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>NYU Shanghai, Glover's Group</h3>
+      <p>Undergraduate Researcher, Shanghai, CN <em>(Jun 2023 – Jun 2024)</em></p>
+      <ul>
+        <li>Utilized high-performance computing clusters and distributed computing to simulate hydrated electrons' EPR g-factors, automating molecular dynamics workflows with Python and Linux Bash for quantum chemistry calculations in Gaussian and TeraChem.</li>
+        <li>Processed and analyzed large-scale simulation datasets to identify trends in hydrated electron behavior using statistical methods and Linux scripting.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>UC Davis, Rundle's Group</h3>
+      <p>Research Assistant, Davis, CA <em>(Apr 2022 – Jun 2024)</em></p>
+      <ul>
+        <li>Applied data-driven methods for Geophysics research to improve prediction accuracy.</li>
+        <li>Developed and tested an Epidemic Type Aftershock Sequence (ETAS) Model, simulating and analyzing millions of earthquakes globally with Python.</li>
+        <li>Authored an honor thesis on the analysis of the ETAS model and its potential application with Machine Learning.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>UC Davis, Department of Chemistry</h3>
+      <p>Teaching Assistant, Davis, CA <em>(Jan 2023 – Mar 2023)</em></p>
+      <ul>
+        <li>Taught general chemistry discussion and lab sessions to a class of 50 undergraduate students.</li>
+        <li>Held office hours and graded exams for approximately 500 students.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="honors">
+    <h2>Honors</h2>
     <ul>
-      <li>
-        <strong>Company A</strong> (2020 - Present)<br>
-        Role: Software Developer<br>
-        Responsibilities: Developing web applications, collaborating with cross-functional teams, etc.
-      </li>
-      <li>
-        <strong>Company B</strong> (2018 - 2020)<br>
-        Role: Junior Developer<br>
-        Responsibilities: Assisted in front-end development, testing, and documentation.
-      </li>
+      <li>Phi Beta Kappa (May 2023 – Present)</li>
+      <li>Golden Key International Honour Society (Nov 2023 – Present)</li>
+      <li>Three Times of Dean's Honors List (Jan 2024, Mar 2024, Jun 2024)</li>
+      <li>Outstanding Graduating Seniors with a Department Citation in Chemistry (Jun 2024)</li>
     </ul>
   </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>You can download my resume by clicking the link below:</p>
-    <a href="resume.pdf" download>Download My Resume</a>
-    <!-- Optionally, embed your resume PDF using an iframe if desired -->
-    <!-- <iframe src="resume.pdf" width="100%" height="600px"></iframe> -->
+  <section id="projects">
+    <h2>Relevant Projects</h2>
+    <div class="project-item">
+      <h3>Columbia University: Application of Graphene on Public Datasets</h3>
+      <p><em>Sep 2024 – Dec 2024</em></p>
+      <ul>
+        <li>Applied a state-of-the-art Cluster Scheduler method—Graphene—on public cluster datasets for performance validation and sustainability evaluation.</li>
+        <li>Led a team of 4, delivered weekly presentations, and authored a final report.</li>
+      </ul>
+    </div>
+    <div class="project-item">
+      <h3>Columbia University: Colorsense - Wearables for Color Recognition</h3>
+      <p><em>Oct 2024 – Dec 2024</em></p>
+      <ul>
+        <li>Designed a wearable device to recognize the color of objects using voice commands and hand gestures.</li>
+        <li>Developed a recognition system using Raspberry Pi, cloud processing, OpenCV, and custom color models.</li>
+      </ul>
+    </div>
+    <div class="project-item">
+      <h3>Columbia University: Wearable Speech to Braille Device</h3>
+      <p><em>Nov 2024</em></p>
+      <ul>
+        <li>Designed a wearable device that converts speech to Braille via vibration, operating solely on Wi-Fi.</li>
+        <li>Won 2nd place in the Hack &amp; Build 2024 hackathon hosted by Columbia University.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <h3>Peer Reviewed Journal Articles</h3>
+    <p>
+      Rundle, J. B., Baughman, I., &amp; Zhang, T. (2024). Nowcasting earthquakes with stochastic simulations: Information entropy of earthquake catalogs. <em>Earth and Space Science, 11</em>, e2023EA003367.<br>
+      <a href="https://doi.org/10.1029/2023EA003367" target="_blank">https://doi.org/10.1029/2023EA003367</a>
+    </p>
+    <h3>Poster Presentations</h3>
+    <p>
+      Zhang, T., Rundle, J.B. Computing Simulated ETAS Earthquake Catalogs Using Artificial Intelligence (AI). Poster presented at the American Geophysical Union 2023; Jan 22–25, 2024; San Francisco, CA.
+    </p>
+  </section>
+
+  <section id="transcript">
+    <h2>Transcript</h2>
+    <p>This section is reserved for your academic transcript. Here you can include a summary of your courses, grades, and academic achievements or offer a downloadable version of your full transcript.</p>
+    <p><a href="transcript.pdf" class="button" download>Download Full Transcript</a></p>
   </section>
 
   <footer>
-    <p>Contact me at: <a href="mailto:your.email@example.com" style="color: #fff;">your.email@example.com</a></p>
+    <p>&copy; 2025 Tianjian (James) Zhang. All rights reserved.</p>
   </footer>
 
 </body>
