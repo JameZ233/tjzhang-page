@@ -200,6 +200,99 @@
       color: var(--muted);
       padding: 16px 0 24px;
     }
+
+        /* ---- Projects grid ---- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 12px 10px;
+      background: #fafbff;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .project-thumb {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1f5eff22, #11182711);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      margin-bottom: 4px;
+      text-align: center;
+      padding: 4px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--muted);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .project-btn {
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: #ffffff;
+      color: var(--accent-dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .project-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
   </style>
 </head>
 <body>
@@ -525,65 +618,157 @@
       </ul>
     </section>
 
-    <!-- PROJECTS -->
+        <!-- PROJECTS -->
     <section id="projects">
-      <h2>Relevant Projects</h2>
+      <h2>Projects &amp; Deliverables</h2>
+      <p style="font-size:0.88rem; color:var(--muted); margin:0 0 6px;">
+        A selection of technical projects with links to papers, slides, code, and external coverage.
+      </p>
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Columbia University: Application of Graphene on Public Datasets</div>
-          <div class="item-meta">Sep 2024 &mdash; Dec 2024</div>
-        </div>
-        <ul>
-          <li>Applied a state-of-the-art cluster scheduler method, Graphene, on public cluster datasets for performance validation and sustainability evaluation.</li>
-          <li>Led a team of 4 for this course project, delivered weekly presentations, and authored a final report.</li>
-        </ul>
-      </div>
+      <div class="project-grid">
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">AWS Innovation Challenge: Posture Pal for Back Pain Prevention</div>
-          <div class="item-meta">Nov 2025</div>
+        <!-- 1. Posture Pal -->
+        <div class="project-card">
+          <div class="project-thumb">
+            Posture Pal - a wearable for back pain prevention
+          </div>
+          <div class="project-title">Posture Pal &mdash; AWS Innovation Challenge</div>
+          <div class="project-meta">Nov 2025 &middot; Embedded Systems, Cloud, AI</div>
+          <div class="project-desc">
+            Prototyped an embedded wellness device integrating IMU and pressure sensors with Arduino/ESP32 for
+            real-time posture monitoring. Built a full-stack pipeline on AWS for AI inference and adaptive feedback.
+            Awarded 3rd place at the AWS Innovation Challenge.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">ESP32</span>
+            <span class="project-tag">Arduino</span>
+            <span class="project-tag">AWS</span>
+            <span class="project-tag">IMU</span>
+          </div>
+          <div class="project-links">
+            <!-- Replace with your actual links -->
+            <a class="project-btn" href="projects/posture-pal/posture-pal-slides.pdf" target="_blank">
+              Slides (PDF)
+            </a>
+            <a class="project-btn" href="https://www.linkedin.com/posts/sahasra-kokkula-03b729225_aws-amazonbedrock-cloudcomputing-ugcPost-7392946261919899648-f4kw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_p4WgBHnFGyu2P2Gpq6TKEohyzWgISblc" target="_blank">
+              Recent LinkedIn Post
+            </a>
+          </div>
         </div>
-        <ul>
-          <li>Prototyped Posture Pal, an embedded wellness device integrating IMU and pressure sensors with Arduino and ESP for real-time data acquisition, wireless communication, and posture monitoring.</li>
-          <li>Built a full-stack pipeline using AWS for AI inference, delivering adaptive feedback through cloud-based analytics and a custom UI; awarded 3rd place at the AWS Innovation Challenge.</li>
-        </ul>
-      </div>
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Columbia University: Spherical Robot Navigation Project</div>
-          <div class="item-meta">Mar 2025 &mdash; May 2025</div>
+        <!-- 2. Spherical Robot Navigation -->
+        <div class="project-card">
+          <div class="project-thumb">
+            Spherical robot in ROS2 Simulation with RL + classical control benchmark
+          </div>
+          <div class="project-title">Spherical Robot Navigation</div>
+          <div class="project-meta">Mar 2025 &mdash; May 2025 &middot; ROS2, RL, Control</div>
+          <div class="project-desc">
+            Combined reinforcement learning with PID/MPC controllers for spherical robot navigation in dynamic maze
+            environments using ROS2 and Gazebo. Built a benchmarking framework for motion stability and control
+            efficiency; containerized the workflow using Docker.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">ROS2</span>
+            <span class="project-tag">Gazebo</span>
+            <span class="project-tag">Reinforcement Learning</span>
+            <span class="project-tag">PID / MPC</span>
+            <span class="project-tag">Docker</span>
+          </div>
+          <div class="project-links">
+            <!-- Replace with your actual links -->
+            <a class="project-btn" href="projects/spherical-robot/spherical-robot-paper.pdf" target="_blank">
+              Paper (PDF)
+            </a>
+          </div>
         </div>
-        <ul>
-          <li>Leveraged ROS2-based simulation in Gazebo for spherical robot navigation and combined reinforcement learning with PID/MPC controllers to enable adaptive path planning in dynamic maze environments.</li>
-          <li>Developed a modular benchmarking framework for motion stability and control efficiency; containerized the simulation workflow using Docker.</li>
-        </ul>
-      </div>
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Columbia University: Colorsense &mdash; Wearables for Color Recognition</div>
-          <div class="item-meta">Oct 2024 &mdash; Dec 2024</div>
+        <!-- 3. Graphene Scheduler Performance -->
+        <div class="project-card">
+          <div class="project-thumb">
+            Graphene cluster scheduler on public datasets for performance &amp; sustainability
+          </div>
+          <div class="project-title">Application of Graphene on Public Datasets</div>
+          <div class="project-meta">Sep 2024 &mdash; Dec 2024 &middot; Systems, Scheduling, Sustainability</div>
+          <div class="project-desc">
+            Applied the Graphene cluster scheduler to public cluster traces to evaluate performance and sustainability.
+            Led a team of four, delivered weekly analysis updates, and wrote a final technical report.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Graphene</span>
+            <span class="project-tag">Cluster Scheduling</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Sustainability</span>
+          </div>
+          <div class="project-links">
+            <!-- Replace with your actual links -->
+            <a class="project-btn" href="https://github.com/JameZ233/cluster-scheduling" target="_blank">
+              GitHub Repo
+            </a>
+            <a class="project-btn" href="projects/graphene/graphene-paper.pdf" target="_blank">
+              Paper (PDF)
+            </a>
+            <a class="project-btn" href="projects/graphene/graphene-artifacts.pdf" target="_blank">
+              Artifacts (PDF)
+            </a>
+          </div>
         </div>
-        <ul>
-          <li>Designed a wearable device to recognize the color of objects using only voice and hand gestures.</li>
-          <li>Developed a recognition system with Raspberry Pi and cloud processing, integrating OpenCV and custom color models for voice, gesture, and image recognition.</li>
-        </ul>
-      </div>
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Columbia University: Wearable Speech to Braille Device</div>
-          <div class="item-meta">Nov 2024</div>
+        <!-- 4. Wearable Speech to Braille Device -->
+        <div class="project-card">
+          <div class="project-thumb">
+            Hackathon-winning wearable that converts speech to Braille via vibration
+          </div>
+          <div class="project-title">Wearable Speech to Braille Device</div>
+          <div class="project-meta">Nov 2024 &middot; Hackathon Project</div>
+          <div class="project-desc">
+            Designed a Wi-Fi-based wearable that converts speech into Braille-like vibration patterns for accessibility.
+            The project won 2nd place at the Hack &amp; Build 2024 hackathon at Columbia University.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Wearables</span>
+            <span class="project-tag">Accessibility</span>
+            <span class="project-tag">IoT</span>
+          </div>
+          <div class="project-links">
+            <!-- Replace with your actual links -->
+            <a class="project-btn" href="projects/speech-braille/speech-braille-presentation.pdf" target="_blank">
+              Presentation (PDF)
+            </a>
+            <a class="project-btn" href="https://www.engineering.columbia.edu/about/news/concept-creation-24-hours" target="_blank">
+              News Article
+            </a>
+          </div>
         </div>
-        <ul>
-          <li>Designed a wearable device that converts speech to Braille via vibration, operating solely on Wi-Fi.</li>
-          <li>Won 2nd place in the Hack &amp; Build 2024 hackathon event hosted by Columbia University.</li>
-        </ul>
+
+        <!-- 5. Quadruped Robot Electronics & Control -->
+        <div class="project-card">
+          <div class="project-thumb">
+            In-progress quadruped robotics platform &amp; power electronics design
+          </div>
+          <div class="project-title">Quadruped Robot &mdash; Electronics &amp; Control</div>
+          <div class="project-meta">Ongoing &middot; Robotics Club, Open-Source Platform</div>
+          <div class="project-desc">
+            Leading electronics and low-level control development for an open-source quadruped robot, including
+            multi-layer power distribution PCBs, motor drivers, and embedded control software for future research use.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Quadruped Robotics</span>
+            <span class="project-tag">PCB Design</span>
+            <span class="project-tag">Power Electronics</span>
+            <span class="project-tag">Embedded Control</span>
+          </div>
+          <div class="project-links">
+            <!-- Replace with your actual links -->
+            <a class="project-btn" href="https://www.linkedin.com/company/ccbr-robotics/posts/?feedView=all" target="_blank">
+              LinkedIn Project Highlight
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
+
 
     <!-- PUBLICATIONS -->
     <section id="publications">
