@@ -3,75 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tianjian (James) Zhang - CV</title>
+  <title>Tianjian (James) Zhang - Resume</title>
   <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #1f5eff;
+      --accent-dark: #153eb0;
+      --border: #e0e0ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
+      line-height: 1.5;
     }
+
     header {
-      background: #343a40;
-      color: #fff;
-      padding: 20px;
+      background: #111827;
+      color: #f9fafb;
+      padding: 24px 16px 20px;
       text-align: center;
     }
-    header p a {
-      color: #fff;
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    header a {
+      color: #bfdbfe;
       text-decoration: none;
     }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
     nav {
-      background: #495057;
+      background: #1f2933;
       text-align: center;
-      padding: 10px 0;
+      padding: 8px 4px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: #e5e7eb;
+      margin: 0 10px;
+      font-size: 0.9rem;
       text-decoration: none;
-      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+    }
+
     section {
-      max-width: 800px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: var(--card);
+      border-radius: 10px;
+      padding: 18px 20px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
     }
+
     h2 {
-      border-bottom: 2px solid #343a40;
-      padding-bottom: 5px;
-      margin-top: 0;
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-dark);
     }
-    h3 {
-      margin-bottom: 5px;
+
+    .item {
+      margin-bottom: 14px;
     }
-    .education-item, .experience-item, .project-item {
-      margin-bottom: 20px;
+
+    .item:last-child {
+      margin-bottom: 0;
     }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4px 10px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .item-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .item-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
     ul {
-      list-style: none;
-      padding-left: 0;
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
     }
+
     li {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
+
+    .skill-group-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .skill-list {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+
+    .honors ul {
+      padding-left: 16px;
+    }
+
+    .honors li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .honor-name {
+      font-size: 0.9rem;
+    }
+
+    .honor-date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .item-meta {
+        text-align: left;
+      }
+      .honors li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .honor-date {
+        white-space: normal;
+      }
+    }
+
     footer {
-      background: #343a40;
-      color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-    a.button {
-      background: #343a40;
-      color: #fff;
-      padding: 10px 15px;
-      text-decoration: none;
-      border-radius: 5px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 16px 0 24px;
     }
   </style>
 </head>
@@ -82,210 +209,417 @@
     <p>
       <a href="mailto:tz2642@columbia.edu">tz2642@columbia.edu</a> |
       (+1) 530-407-7864 |
-      <a href="https://www.linkedin.com/in/tjzhang5741" target="_blank">LinkedIn</a> |
-      New York, NY, 10016
+      <a href="https://www.linkedin.com/in/tjzhang5741" target="_blank" rel="noopener noreferrer">
+        linkedin.com/in/tjzhang5741
+      </a>
     </p>
+    <p>New York, NY, 10016</p>
   </header>
 
   <nav>
     <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#honors">Honors</a>
     <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
-    <a href="#transcript">Transcript</a>
   </nav>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-item">
-      <h3>Columbia University</h3>
-      <p>MS in Electrical Engineering, New York, NY <em>(Expected Dec 2025)</em></p>
-      <ul>
-        <li>GPA: 3.75 | Emphasis: Smart Electric Energy</li>
-        <li>Courses: Internet of Things, Data Center Processing, Control Theory, Optimization, Energy Management, Reinforcement Learning (in progress), Smart Grid Technology (in progress)</li>
-      </ul>
-    </div>
-    <div class="education-item">
-      <h3>University of California, Davis</h3>
-      <p>BS in Physics and Chemical Physics, Davis, CA <em>(Jun 2024)</em></p>
-      <ul>
-        <li>Magna Cum Laude</li>
-        <li>Minor in Mathematics</li>
-        <li>Courses: Analog Circuits, Digital Circuits, Solid State Physics, Data Acquisition, Quantum Computing, Probability, Numerical Analysis, Econophysics, Chemistry, Tractor Driving</li>
-      </ul>
-    </div>
-  </section>
+  <main>
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Columbia University, DitecT Lab</h3>
-      <p>Research Assistant, New York, NY <em>(Jan 2025 - Present)</em></p>
-      <ul>
-        <li>Assembled a scaled autonomous vehicle testbed using ROS2 and Nvidia Jetson for algorithm evaluation.</li>
-        <li>Developed and simulated control algorithms (PID/MPC) and path planning for autonomous navigation, integrating traffic signal coordination and sensor fusion using Python.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Columbia Robotics Club</h3>
-      <p>Electronics Lead, New York, NY <em>(Sep 2024 - Present)</em></p>
-      <ul>
-        <li>Led a team of 10 students in the electrical subteam for the annual PacBot competition.</li>
-        <li>Designed robot structure in CAD, implemented PID control algorithms, upgraded schematics, designed PCB layouts, and assisted in motor integration, achieving a 75% performance improvement.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Shanghai Sailong Biotechnology</h3>
-      <p>Intern, Shanghai, CN <em>(Jul 2024 - Aug 2024)</em></p>
-      <ul>
-        <li>Applied a Transformer model to discover 10 organic optoelectronic materials, improving photovoltaic efficiency by 5% compared with traditional approaches.</li>
-        <li>Built a website to design over 100 organic materials using FastAPI and Streamlit.</li>
-        <li>Created a script to automatically generate materials and evaluate them with chemistry tools and Python.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>NYU Shanghai, Glover's Group</h3>
-      <p>Undergraduate Researcher, Shanghai, CN <em>(Jun 2023 - Jun 2024)</em></p>
-      <ul>
-        <li>Utilized high-performance computing clusters and distributed computing to simulate hydrated electrons' EPR g-factors, automating molecular dynamics workflows with Python and Linux Bash for quantum chemistry calculations in Gaussian and TeraChem.</li>
-        <li>Processed and analyzed large-scale simulation datasets to identify trends in hydrated electron behavior using statistical methods and Linux scripting.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>UC Davis, Rundle's Group</h3>
-      <p>Research Assistant, Davis, CA <em>(Apr 2022 - Jun 2024)</em></p>
-      <ul>
-        <li>Applied data-driven methods for Geophysics research to improve prediction accuracy.</li>
-        <li>Developed and tested an Epidemic Type Aftershock Sequence (ETAS) Model, simulating and analyzing millions of earthquakes globally with Python.</li>
-        <li>Authored an honor thesis on the analysis of the ETAS model and its potential application with Machine Learning.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>UC Davis, Department of Chemistry</h3>
-      <p>Teaching Assistant, Davis, CA <em>(Jan 2023 - Mar 2023)</em></p>
-      <ul>
-        <li>Taught general chemistry discussion and lab sessions to a class of 50 undergraduate students.</li>
-        <li>Held office hours and graded exams for approximately 500 students.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Chen's Lab, School of Optometry, UC Berkeley</h3>
-      <p>Staff Volunteer, Berkeley, CA <em>(Jul 2022 - Sep 2022)</em></p>
-      <ul>
-        <li>Observed lab techniques including Immunofluorescence staining, Mammalian cell culture, RNA/DNA isolation, siRNA/RNAi.</li>
-        <li>Practiced PCR and qPCR techniques.</li>
-        <li>Analyzed protein data from experiment using Python</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Formula Racing at UC Davis</h3>
-      <p>Suspension Dynamics Member, Davis, CA <em>(Oct 2021 --- Mar 2023)</em></p>
-      <ul>
-        <li>Studied various models using Matlab and Simulink, including Quarter Car, Half Car, etc.</li>
-        <li>Reseached and developed vehicle kinematics model and relevant suspension system.</li>
-        <li>Participated in the vehicle manufacturing for annual Formula SAE competition in Michigan</li>
-      </ul>
-    </div>
-  </section>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Columbia University</div>
+            <div class="item-subtitle">MS in Electrical Engineering &mdash; GPA: 3.72</div>
+          </div>
+          <div class="item-meta">
+            New York, NY<br>
+            Expected Dec 2025
+          </div>
+        </div>
+        <ul>
+          <li>Courses: Internet of Things, Data Center Processing, Control Theory, Optimization, Energy Management, Robotics, Reinforcement Learning, Power Electronics (in progress)</li>
+        </ul>
+      </div>
 
-  <section id="honors">
-    <h2>Honors</h2>
-    <ul>
-      <li>Phi Beta Kappa (May 2023 - Present)</li>
-      <li>Golden Key International Honour Society (Nov 2023 - Present)</li>
-      <li>Three Times of Dean's Honors List (Jan 2024, Mar 2024, Jun 2024)</li>
-      <li>Outstanding Graduating Seniors with a Department Citation in Chemistry (Jun 2024)</li>
-    </ul>
-  </section>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">University of California, Davis</div>
+            <div class="item-subtitle">BS in Physics and Chemical Physics &mdash; Magna Cum Laude</div>
+          </div>
+          <div class="item-meta">
+            Davis, CA<br>
+            Jun 2024
+          </div>
+        </div>
+        <ul>
+          <li>Minor in Mathematics</li>
+          <li>Courses: Analog Circuits, Digital Circuits, Networks, Data Acquisition, Quantum Computing, Probability, Numerical Analysis, Physics, Machine Learning</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>Relevant Projects</h2>
-    <div class="project-item">
-      <h3>Columbia University: Wearable Digital Twins for Backpain Prevention</h3>
-      <p><em>Mar 2025</em></p>
-      <ul>
-        <li>Designed and prototyped a pair of wearable digital twins focused on optimizing standing posture by providing real-time feedback, monitoring, wireless data acquisition, and data visualization.</li>
-        <li>Ranked top 5 out of 20 and got into final round of Health Hackathon hosted by Cornell University.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>Columbia University: Application of Graphene on Public Datasets</h3>
-      <p><em>Sep 2024 - Dec 2024</em></p>
-      <ul>
-        <li>Applied a state-of-the-art Cluster Scheduler method—Graphene—on public cluster datasets for performance validation and sustainability evaluation.</li>
-        <li>Led a team of 4, delivered weekly presentations, authored a final report, and earned an A grade for the project.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>Columbia University: Energy Portofolio for Sustainable Campus</h3>
-      <p><em>Nov 2024 - Dec 2024</em></p>
-      <ul>
-        <li>Optimized campus electricity planning from 5 energy sources and creating a simulation-based energy portfolio using Python.</li>
-        <li>Constructed renewable energy pricing model campus energy transition, and earned an A grade for the project.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>Columbia University: Colorsense - Wearables for Color Recognition</h3>
-      <p><em>Oct 2024 - Dec 2024</em></p>
-      <ul>
-        <li>Designed a wearable device to recognize the color of objects using voice commands and hand gestures with a accuracy of 80%.</li>
-        <li>Developed a recognition system using Raspberry Pi, cloud processing, OpenCV, and custom color models.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>Columbia University: Wearable Speech to Braille Device</h3>
-      <p><em>Nov 2024</em></p>
-      <ul>
-        <li>Designed a wearable device that converts speech to Braille via vibration, operating solely on Wi-Fi.</li>
-        <li>Won 2nd place in the Hack &amp; Build 2024 hackathon hosted by Columbia University.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>UC Davis: Quantitative Chemical Component Analysis of Commercial Cannabis Products</h3>
-      <p><em>Apr 2024 - Jun 2024</em></p>
-      <ul>
-        <li>Conducted a quantitative analysis of the chemical constituents in commercially available cannabis products.</li>
-        <li>Employed various chromatographic and mass spectrometric techniques to separate and quantify psychoactive and non-psychoactive substances, revealing that 50% of the tested samples contained illegal components.</li>
-      </ul>
-    </div>
-    <div class="project-item">
-      <h3>UC Davis: Zombie Epidemic Population Simulation</h3>
-      <p><em>Apr 2024 - Jun 2024</em></p>
-      <ul>
-        <li>Developed a Python project that simulates a zombie epidemic in a city's population. Inspired by a zombie movie, the simulation also examines how such an epidemic spreads and interacts among multiple cities.</li>
-        <li>Conducted as the final project of MAT124 Mathematical Bioneuroscience.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
 
-  <section id="publications">
-    <h2>Publications</h2>
-    <h3>Peer Reviewed Journal Articles</h3>
-    <p>
-      Rundle, J. B., Baughman, I., &amp; Zhang, T. (2024). Nowcasting earthquakes with stochastic simulations: Information entropy of earthquake catalogs. <em>Earth and Space Science, 11</em>, e2023EA003367.<br>
-      <a href="https://doi.org/10.1029/2023EA003367" target="_blank">https://doi.org/10.1029/2023EA003367</a>
-    </p>
-    <h3>Poster Presentations</h3>
-    <p>
-      Zhang, T., Rundle, J.B. Computing Simulated ETAS Earthquake Catalogs Using Artificial Intelligence (AI). Poster presented at the American Geophysical Union 2023; Jan 22–25, 2024; San Francisco, CA.
-    </p>
-  </section>
+      <div class="item">
+        <div class="skill-group-title">Programming Skills</div>
+        <p class="skill-list">
+          Python, C/C++, Matlab, Bash, Verilog, SQL, Powershell, HTML, LaTeX
+        </p>
+      </div>
 
-  <section id="transcript">
-    <h2>Transcript</h2>
-    <p>This section includes downloadable academic transcripts.</p>
-    <p>
-      <a href="transcript/transcript1.pdf" class="button" download>Download Transcript 1</a>
-    </p>
-    <p>
-      <a href="transcript/transcript2.pdf" class="button" download>Download Transcript 2</a>
-    </p>
-</section>
+      <div class="item">
+        <div class="skill-group-title">Frameworks</div>
+        <p class="skill-list">
+          Scipy, Pytorch, Qiskit, OpenCV, Scikit-learn, FastAPI, Networkx, TensorFlow
+        </p>
+      </div>
 
+      <div class="item">
+        <div class="skill-group-title">Lab Skills</div>
+        <p class="skill-list">
+          Microscopy, UV Spectrophotometry, qPCR, Gel Electrophoresis, FTIR Spectroscopy, NMR Spectroscopy, Chromatography
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="skill-group-title">Hardware Skills</div>
+        <p class="skill-list">
+          Oscilloscope, Multimeter, Function generator, Soldering, PCB Development, Signal Analysis, Prototyping, FPGA
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="skill-group-title">PC / Software Skills</div>
+        <p class="skill-list">
+          LaTeX, MNova, Microsoft Word, PowerPoint, Excel, Gaussian, TeraChem, ChatGPT
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="skill-group-title">Other Skills</div>
+        <p class="skill-list">
+          AWS, GCP, LTSpice, Simulink, Data Visualization, CAD, Altium, Raspberry Pi, ROS2, Embedded Communication,
+          4G/5G, mmWave, IP networking, Modem Logging, Docker, Jira, BLE, MQTT, ESP32
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="skill-group-title">Certificates</div>
+        <p class="skill-list">
+          Quantum Computing, Product Management, Networking
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Boldyn Networks</div>
+            <div class="item-subtitle">Device Technology Intern</div>
+          </div>
+          <div class="item-meta">
+            New York, NY<br>
+            Jun 2025 &mdash; Aug 2025
+          </div>
+        </div>
+        <ul>
+          <li>Supported the Mobile Private Network team with edge device testing, system integration, and troubleshooting across multi-vendor LTE and 5G network equipment.</li>
+          <li>Configured and validated IPv4/IPv6 connectivity, applying routing and monitoring tools during mobile device certification and performance testing on private LTE/5G systems.</li>
+          <li>Researched robotics use cases on private wireless networks and proposed innovative solutions to enhance reliability and efficiency.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Columbia University, DitecT Lab</div>
+            <div class="item-subtitle">Research Assistant</div>
+          </div>
+          <div class="item-meta">
+            New York, NY<br>
+            Jan 2025 &mdash; Present
+          </div>
+        </div>
+        <ul>
+          <li>Assembled a scaled autonomous vehicle using ROS2 and Nvidia Jetson for algorithm evaluation to construct a testbed in city environments.</li>
+          <li>Developed and simulated control algorithms (PID/MPC) and path planning for autonomous navigation, integrating traffic signal coordination and sensor fusion using Python.</li>
+          <li>Researched and implemented bird's-eye view (BEV) generation algorithms to enhance perception accuracy and spatial awareness for autonomous driving.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Columbia Robotics Club</div>
+            <div class="item-subtitle">Electronics Lead</div>
+          </div>
+          <div class="item-meta">
+            New York, NY<br>
+            Sep 2024 &mdash; Present
+          </div>
+        </div>
+        <ul>
+          <li>Led the Electrical Subteam of 10 members for PacBot and RoboCup projects; implemented embedded PID control, motor tuning, and custom PCB design, achieving a 75% performance boost.</li>
+          <li>Designed multi-layer PCBs for power distribution and actuator control, integrated CAN bus communication, and enabled cross-platform compatibility for quadruped and wheeled robots.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Shanghai Sailong Biotechnology</div>
+            <div class="item-subtitle">Intern</div>
+          </div>
+          <div class="item-meta">
+            Shanghai, CN<br>
+            Jul 2024 &mdash; Aug 2024
+          </div>
+        </div>
+        <ul>
+          <li>Applied a Transformer model to discover 10 organic optoelectronic materials, improving photovoltaic efficiency by 5% compared with traditional approaches.</li>
+          <li>Built a website to design more than 100 organic materials using FastAPI and Streamlit.</li>
+          <li>Created a script to automatically create materials and evaluate them with chemistry tools and Python.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">NYU Shanghai, Glover's Group</div>
+            <div class="item-subtitle">Undergraduate Researcher</div>
+          </div>
+          <div class="item-meta">
+            Shanghai, CN<br>
+            Jun 2023 &mdash; Jun 2024
+          </div>
+        </div>
+        <ul>
+          <li>Utilized high-performance computing (HPC) clusters and distributed computing to simulate hydrated electrons' EPR g-factors, automating molecular dynamics workflows with Python and Linux Bash for quantum chemistry calculations in Gaussian and TeraChem.</li>
+          <li>Processed and analyzed large-scale simulation datasets to identify trends in hydrated electron behavior across different conditions, leveraging Python, Linux scripting, and statistical methods for data-driven insights in computational electrochemistry.</li>
+          <li>Presented results during group meetings monthly and wrote a research report.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">UC Davis, Rundle's Group</div>
+            <div class="item-subtitle">Research Assistant</div>
+          </div>
+          <div class="item-meta">
+            Davis, CA<br>
+            Apr 2022 &mdash; Jun 2024
+          </div>
+        </div>
+        <ul>
+          <li>Applied data-driven methods for Geophysics research to improve prediction accuracy.</li>
+          <li>Developed and tested an Epidemic Type Aftershock Sequence (ETAS) model, simulating and analyzing millions of earthquakes globally with Python.</li>
+          <li>Showcased a poster at the American Geophysics Union 2023 meeting and collaborated on a paper for publication.</li>
+          <li>Authored an honors thesis about analysis of the ETAS model and potential application with Machine Learning.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Womanium Quantum</div>
+            <div class="item-subtitle">Quantum Computing Summer Program</div>
+          </div>
+          <div class="item-meta">
+            Remote<br>
+            Jul 2023 &mdash; Aug 2023
+          </div>
+        </div>
+        <ul>
+          <li>Attended lectures and completed weekly exercises and quizzes on quantum algorithms, hardware, and applications.</li>
+          <li>Obtained certificates in QNickel, QKD, Quantum software, and hardware.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">UC Davis, Department of Chemistry</div>
+            <div class="item-subtitle">Teaching Assistant</div>
+          </div>
+          <div class="item-meta">
+            Davis, CA<br>
+            Jan 2023 &mdash; Mar 2023
+          </div>
+        </div>
+        <ul>
+          <li>Taught general chemistry discussion and lab sessions to a class of 50 undergraduate students.</li>
+          <li>Held office hours and graded exams for a class of approximately 500 students.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Chen's Lab, School of Optometry, UC Berkeley</div>
+            <div class="item-subtitle">Staff Volunteer</div>
+          </div>
+          <div class="item-meta">
+            Berkeley, CA<br>
+            Jul 2022 &mdash; Sep 2022
+          </div>
+        </div>
+        <ul>
+          <li>Observed lab techniques including immunofluorescence staining, mammalian cell culture, RNA/DNA isolation, and siRNA/RNAi.</li>
+          <li>Practiced PCR and qPCR techniques.</li>
+          <li>Analyzed experimental data using Python.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Formula Racing at UC Davis (FSAE Electric)</div>
+            <div class="item-subtitle">Suspension Dynamics Member</div>
+          </div>
+          <div class="item-meta">
+            Davis, CA<br>
+            Oct 2021 &mdash; Mar 2023
+          </div>
+        </div>
+        <ul>
+          <li>Studied vehicle dynamics models using Matlab and Simulink, including Quarter Car and Half Car models.</li>
+          <li>Researched and developed vehicle kinematics models and relevant suspension systems.</li>
+          <li>Participated in vehicle manufacturing for the annual Formula SAE competition in Michigan.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HONORS -->
+    <section id="honors" class="honors">
+      <h2>Honors</h2>
+      <ul>
+        <li>
+          <span class="honor-name">Phi Beta Kappa</span>
+          <span class="honor-date">May 2023</span>
+        </li>
+        <li>
+          <span class="honor-name">Golden Key International Honour Society</span>
+          <span class="honor-date">Nov 2023</span>
+        </li>
+        <li>
+          <span class="honor-name">Three Times Dean's Honors List</span>
+          <span class="honor-date">Jan 2024, Mar 2024, Jun 2024</span>
+        </li>
+        <li>
+          <span class="honor-name">Outstanding Graduating Seniors with a Department Citation in Chemistry</span>
+          <span class="honor-date">Jun 2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Relevant Projects</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Columbia University: Application of Graphene on Public Datasets</div>
+          <div class="item-meta">Sep 2024 &mdash; Dec 2024</div>
+        </div>
+        <ul>
+          <li>Applied a state-of-the-art cluster scheduler method, Graphene, on public cluster datasets for performance validation and sustainability evaluation.</li>
+          <li>Led a team of 4 for this course project, delivered weekly presentations, and authored a final report.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">AWS Innovation Challenge: Posture Pal for Back Pain Prevention</div>
+          <div class="item-meta">Nov 2025</div>
+        </div>
+        <ul>
+          <li>Prototyped Posture Pal, an embedded wellness device integrating IMU and pressure sensors with Arduino and ESP for real-time data acquisition, wireless communication, and posture monitoring.</li>
+          <li>Built a full-stack pipeline using AWS for AI inference, delivering adaptive feedback through cloud-based analytics and a custom UI; awarded 3rd place at the AWS Innovation Challenge.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Columbia University: Spherical Robot Navigation Project</div>
+          <div class="item-meta">Mar 2025 &mdash; May 2025</div>
+        </div>
+        <ul>
+          <li>Leveraged ROS2-based simulation in Gazebo for spherical robot navigation and combined reinforcement learning with PID/MPC controllers to enable adaptive path planning in dynamic maze environments.</li>
+          <li>Developed a modular benchmarking framework for motion stability and control efficiency; containerized the simulation workflow using Docker.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Columbia University: Colorsense &mdash; Wearables for Color Recognition</div>
+          <div class="item-meta">Oct 2024 &mdash; Dec 2024</div>
+        </div>
+        <ul>
+          <li>Designed a wearable device to recognize the color of objects using only voice and hand gestures.</li>
+          <li>Developed a recognition system with Raspberry Pi and cloud processing, integrating OpenCV and custom color models for voice, gesture, and image recognition.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Columbia University: Wearable Speech to Braille Device</div>
+          <div class="item-meta">Nov 2024</div>
+        </div>
+        <ul>
+          <li>Designed a wearable device that converts speech to Braille via vibration, operating solely on Wi-Fi.</li>
+          <li>Won 2nd place in the Hack &amp; Build 2024 hackathon event hosted by Columbia University.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Peer Reviewed Journal Articles</div>
+        </div>
+        <ul>
+          <li>
+            Rundle, J. B., Baughman, I., &amp; Zhang, T. (2024). Nowcasting earthquakes with stochastic simulations:
+            Information entropy of earthquake catalogs. <em>Earth and Space Science, 11</em>, e2023EA003367.<br>
+            <a href="https://doi.org/10.1029/2023EA003367" target="_blank" rel="noopener noreferrer">
+              https://doi.org/10.1029/2023EA003367
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Poster Presentations</div>
+        </div>
+        <ul>
+          <li>
+            Zhang, T., Rundle, J. B. <em>Computing Simulated ETAS Earthquake Catalogs Using Artificial Intelligence (AI)</em>.
+            Poster presented at: American Geophysical Union 2023; Jan 22&ndash;25, 2024; San Francisco, CA.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Tianjian (James) Zhang. All rights reserved.</p>
+    &copy; 2025 Tianjian (James) Zhang
   </footer>
 
 </body>
