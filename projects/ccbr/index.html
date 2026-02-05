@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadruped Robot &mdash; CCBR | Tianjian Zhang</title>
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #1f5eff;
+      --accent-dark: #153eb0;
+      --border: #e0e0ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 24px 16px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.6rem;
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    header a {
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      background: #1f2933;
+      text-align: center;
+      padding: 8px 4px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin: 0 10px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 18px 20px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-dark);
+    }
+
+    h3 {
+      margin: 14px 0 8px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    p, li {
+      font-size: 0.9rem;
+    }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--muted);
+    }
+
+    /* Media gallery */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .media-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fafbff;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+
+    .media-item img,
+    .media-item video {
+      width: 100%;
+      display: block;
+    }
+
+    .media-caption {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 16px 0 24px;
+    }
+
+    @media (max-width: 600px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Quadruped Robot &mdash; Electronics &amp; Control</h1>
+    <p>Columbia College Botrobotics (CCBR)</p>
+  </header>
+
+  <nav>
+    <a href="../../index.html">Home</a>
+    <a href="#overview">Overview</a>
+    <a href="#pdb">Power Distribution</a>
+    <a href="#videos">Videos</a>
+  </nav>
+
+  <main>
+    <a class="back-link" href="../../index.html">&larr; Back to main page</a>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>
+        Leading electronics and low-level control development for an open-source quadruped robot at Columbia College
+        Botrobotics (CCBR). The project encompasses multi-layer power distribution PCB design, motor driver integration,
+        CAN bus communication, and embedded control software &mdash; all targeted for future college-level educational use.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Quadruped Robotics</span>
+        <span class="project-tag">PCB Design</span>
+        <span class="project-tag">Power Electronics</span>
+        <span class="project-tag">Embedded Control</span>
+        <span class="project-tag">CAN Bus</span>
+        <span class="project-tag">Altium Designer</span>
+      </div>
+    </section>
+
+    <!-- POWER DISTRIBUTION BOARD -->
+    <section id="pdb">
+      <h2>Power Distribution Board</h2>
+      <p>
+        The custom power distribution board manages battery power delivery to all subsystems of the quadruped robot,
+        including motor drivers, compute modules, and sensor arrays. The board features voltage regulation,
+        overcurrent protection, and status monitoring.
+      </p>
+
+      <div class="media-grid">
+        <div class="media-item">
+          <img src="pics/pdb-front.jpg" alt="Power distribution board front view">
+          <div class="media-caption">Power distribution board &mdash; front view</div>
+        </div>
+        <div class="media-item">
+          <img src="pics/pcb-annotated.jpg" alt="PCB annotated layout">
+          <div class="media-caption">PCB annotated layout</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos">
+      <h2>Videos</h2>
+      <div class="media-grid">
+        <div class="media-item">
+          <video controls preload="metadata">
+            <source src="videos/leg-test.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="media-caption">Leg mechanism test</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Tianjian (James) Zhang
+  </footer>
+
+</body>
+</html>
