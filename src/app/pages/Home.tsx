@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { ArrowRight, Download, GraduationCap, Briefcase, Award, ChevronRight } from 'lucide-react';
 import { projects } from '../data/projects';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
+// Sign up free at https://formspree.io, create a form pointed at tz2642@columbia.edu,
+// then replace YOUR_FORM_ID below with the ID from your form's endpoint URL.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 export function Home() {
   const featuredProjects = projects.slice(0, 3);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
     <div className="pt-16">
@@ -499,60 +505,115 @@ export function Home() {
           </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {formStatus === 'success' ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
+                <p className="text-gray-600 mb-6">Thanks for reaching out — I'll get back to you soon.</p>
+                <button
+                  onClick={() => setFormStatus('idle')}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Send Another
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setFormStatus('submitting');
+                  try {
+                    const res = await fetch(FORMSPREE_ENDPOINT, {
+                      method: 'POST',
+                      body: new FormData(e.currentTarget),
+                      headers: { Accept: 'application/json' },
+                    });
+                    setFormStatus(res.ok ? 'success' : 'error');
+                  } catch {
+                    setFormStatus('error');
+                  }
+                }}
+                className="space-y-6"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      disabled={formStatus === 'submitting'}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:opacity-50"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      disabled={formStatus === 'submitting'}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:opacity-50"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-                    Name
+                  <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Your name"
+                    id="subject"
+                    name="subject"
+                    required
+                    disabled={formStatus === 'submitting'}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:opacity-50"
+                    placeholder="What's this about?"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-                    Email
+                  <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+                    Message
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="your.email@example.com"
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    required
+                    disabled={formStatus === 'submitting'}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:opacity-50"
+                    placeholder="Your message..."
                   />
                 </div>
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  placeholder="What's this about?"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  placeholder="Your message..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-              >
-                Send Message
-              </button>
-            </form>
+                {formStatus === 'error' && (
+                  <p className="text-red-600 text-sm">
+                    Something went wrong. Please try again or email me directly at{' '}
+                    <a href="mailto:tz2642@columbia.edu" className="underline">
+                      tz2642@columbia.edu
+                    </a>.
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={formStatus === 'submitting'}
+                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {formStatus === 'submitting' ? 'Sending…' : 'Send Message'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

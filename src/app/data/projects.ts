@@ -52,7 +52,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Slides (PDF)", url: `${base}projects/posture-pal/posture-pal-slides.pdf` },
-      { label: "LinkedIn Post", url: "https://www.linkedin.com/in/tjzhang5741/" }
+      { label: "LinkedIn Post", url: "https://www.linkedin.com/feed/update/urn:li:activity:7393866859235905536/" }
     ]
   },
   {
@@ -113,7 +113,7 @@ export const projects: Project[] = [
       "Coordinating team efforts across different analysis tasks",
       "Balancing performance optimization with sustainability goals"
     ],
-    github: "https://github.com",
+    github: "https://github.com/JameZ233/cluster-scheduling",
     links: [
       { label: "Paper (PDF)", url: `${base}projects/graphene/graphene-paper.pdf` },
       { label: "Artifacts (PDF)", url: `${base}projects/graphene/graphene-artifacts.pdf` }
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Project Page", url: `${base}projects/ccbr/` },
-      { label: "LinkedIn Highlight", url: "https://www.linkedin.com/in/tjzhang5741/" }
+      { label: "LinkedIn Highlight", url: "https://www.linkedin.com/company/ccbr-robotics/posts/?feedView=all" }
     ]
   },
   {
@@ -250,8 +250,8 @@ export const projects: Project[] = [
       "Integrating machine learning with physics-based models"
     ],
     links: [
-      { label: "Journal Article", url: "#" },
-      { label: "Honors Thesis", url: "#" }
+      { label: "Journal Article", url: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023EA003367" },
+      { label: "Honors Thesis", url: `${base}projects/earthquake/thesis.pdf` }
     ]
   }
 ];
