@@ -22,7 +22,7 @@ export function Root() {
 
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== '/') {
-      window.location.href = `/#${sectionId}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${sectionId}`;
     } else {
       const element = document.getElementById(sectionId);
       if (element) {

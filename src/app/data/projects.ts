@@ -18,6 +18,10 @@ export interface Project {
   links?: { label: string; url: string }[];
 }
 
+// Vite replaces import.meta.env.BASE_URL at build time:
+// '/tjzhang-page/' on GitHub Pages, '/' in local dev.
+const base = import.meta.env.BASE_URL;
+
 export const projects: Project[] = [
   {
     id: "posture-pal",
@@ -25,7 +29,7 @@ export const projects: Project[] = [
     category: "Embedded Systems",
     shortDescription: "Embedded wellness device for real-time posture monitoring with AI inference on AWS",
     description: "Prototyped an embedded wellness device integrating IMU and pressure sensors with Arduino and ESP8266 for real-time posture monitoring. Built a full-stack pipeline on AWS for AI inference and adaptive feedback. Awarded 3rd place at the AWS Innovation Challenge.",
-    image: "/projects/pics/posture-pal.png",
+    image: `${base}projects/pics/posture-pal.png`,
     technologies: ["ESP8266", "Arduino", "AWS", "IMU", "Wireless Communication", "Embedded Programming", "AI"],
     duration: "November 2025",
     role: "Lead Developer",
@@ -47,7 +51,7 @@ export const projects: Project[] = [
       "Managing latency between embedded device and cloud inference"
     ],
     links: [
-      { label: "Slides (PDF)", url: "/projects/posture-pal/posture-pal-slides.pdf" },
+      { label: "Slides (PDF)", url: `${base}projects/posture-pal/posture-pal-slides.pdf` },
       { label: "LinkedIn Post", url: "https://www.linkedin.com/in/tjzhang5741/" }
     ]
   },
@@ -57,7 +61,7 @@ export const projects: Project[] = [
     category: "Robotics",
     shortDescription: "Reinforcement learning combined with PID/MPC controllers for spherical robot navigation in ROS2",
     description: "Combined reinforcement learning with PID/MPC controllers for spherical robot navigation in dynamic maze environments using ROS2 and Gazebo. Built a benchmarking framework for motion stability and control efficiency; containerized the workflow using Docker.",
-    image: "/projects/pics/spherical-robot.gif",
+    image: `${base}projects/pics/spherical-robot.gif`,
     technologies: ["ROS2", "Gazebo", "Reinforcement Learning", "PID", "MPC", "Docker", "Python"],
     duration: "March 2025 — May 2025",
     role: "Research Engineer",
@@ -79,7 +83,7 @@ export const projects: Project[] = [
       "Ensuring real-time performance in simulation"
     ],
     links: [
-      { label: "Paper (PDF)", url: "/projects/spherical-robot/spherical-robot-paper.pdf" }
+      { label: "Paper (PDF)", url: `${base}projects/spherical-robot/spherical-robot-paper.pdf` }
     ]
   },
   {
@@ -88,7 +92,7 @@ export const projects: Project[] = [
     category: "Systems",
     shortDescription: "Applied Graphene cluster scheduler to evaluate performance and sustainability on public traces",
     description: "Applied the Graphene cluster scheduler to public cluster traces to evaluate performance and sustainability. Led a team of four, delivered weekly analysis updates, and wrote a final technical report.",
-    image: "/projects/pics/graphene.jpg",
+    image: `${base}projects/pics/graphene.jpg`,
     technologies: ["Graphene", "Cluster Scheduling", "Python", "Sustainability", "Data Analysis"],
     duration: "September 2024 — December 2024",
     role: "Team Lead",
@@ -111,8 +115,8 @@ export const projects: Project[] = [
     ],
     github: "https://github.com",
     links: [
-      { label: "Paper (PDF)", url: "/projects/graphene/graphene-paper.pdf" },
-      { label: "Artifacts (PDF)", url: "/projects/graphene/graphene-artifacts.pdf" }
+      { label: "Paper (PDF)", url: `${base}projects/graphene/graphene-paper.pdf` },
+      { label: "Artifacts (PDF)", url: `${base}projects/graphene/graphene-artifacts.pdf` }
     ]
   },
   {
@@ -121,7 +125,7 @@ export const projects: Project[] = [
     category: "Accessibility",
     shortDescription: "Wi-Fi-based wearable converting speech into Braille-like vibration patterns for accessibility",
     description: "Designed a Wi-Fi-based wearable that converts speech into Braille-like vibration patterns for accessibility. The project won 2nd place at the Hack & Build 2024 hackathon at Columbia University.",
-    image: "/projects/pics/speech-braille.jpeg",
+    image: `${base}projects/pics/speech-braille.jpeg`,
     technologies: ["Wearables", "Accessibility", "IoT", "Wi-Fi", "Speech Recognition", "Vibration Motors"],
     duration: "November 2024",
     role: "Hardware & Software Developer",
@@ -143,7 +147,7 @@ export const projects: Project[] = [
       "Managing power and wireless connectivity constraints"
     ],
     links: [
-      { label: "Presentation (PDF)", url: "/projects/speech-braille/speech-braille-presentation.pdf" }
+      { label: "Presentation (PDF)", url: `${base}projects/speech-braille/speech-braille-presentation.pdf` }
     ]
   },
   {
@@ -152,12 +156,12 @@ export const projects: Project[] = [
     category: "Robotics",
     shortDescription: "Open-source quadruped robot with custom PCBs and embedded control for educational use",
     description: "Leading electronics and low-level control development for an open-source quadruped robot, including multi-layer power distribution PCBs, motor drivers, and embedded control software for future college-level educational use.",
-    image: "/projects/pics/ccbr.jpg",
+    image: `${base}projects/pics/ccbr.jpg`,
     gallery: [
-      "/projects/ccbr/pics/pdb-annotated.jpg",
-      "/projects/ccbr/pics/pcb.jpg",
+      `${base}projects/ccbr/pics/pdb-annotated.jpg`,
+      `${base}projects/ccbr/pics/pcb.jpg`,
     ],
-    video: "/projects/ccbr/videos/leg-test.mp4",
+    video: `${base}projects/ccbr/videos/leg-test.mp4`,
     technologies: ["Quadruped Robotics", "PCB Design", "Power Electronics", "Embedded Control", "Motor Drivers", "CAN Bus"],
     duration: "Ongoing",
     role: "Electronics Lead",
@@ -179,7 +183,7 @@ export const projects: Project[] = [
       "Ensuring robust communication in electrically noisy environment"
     ],
     links: [
-      { label: "Project Page", url: "/projects/ccbr/" },
+      { label: "Project Page", url: `${base}projects/ccbr/` },
       { label: "LinkedIn Highlight", url: "https://www.linkedin.com/in/tjzhang5741/" }
     ]
   },
@@ -189,10 +193,10 @@ export const projects: Project[] = [
     category: "Robotics",
     shortDescription: "Autonomous Pac-Man maze robot with custom PCB and PID control achieving 3rd place",
     description: "Designed the end-to-end electrical system for an autonomous Pac-Man maze robot as Electrical Lead. Built a compact integrated PCB with MCU, IR sensors, IMU, and motor drivers; implemented PID control for fast maze navigation. Achieved 3rd place in competition.",
-    image: "/projects/pacbot/pics/robot-overview.jpg",
+    image: `${base}projects/pacbot/pics/robot-overview.jpg`,
     gallery: [
-      "/projects/pacbot/pics/competition-2025.jpg",
-      "/projects/pacbot/pics/pcb.jpg",
+      `${base}projects/pacbot/pics/competition-2025.jpg`,
+      `${base}projects/pacbot/pics/pcb.jpg`,
     ],
     technologies: ["PCB Design", "PID Control", "IR Sensors", "IMU", "Embedded Systems", "Motor Drivers"],
     duration: "2025",
@@ -215,7 +219,7 @@ export const projects: Project[] = [
       "Ensuring reliable sensor readings in competition environment"
     ],
     links: [
-      { label: "Project Page", url: "/projects/pacbot/" }
+      { label: "Project Page", url: `${base}projects/pacbot/` }
     ]
   },
   {
@@ -224,7 +228,7 @@ export const projects: Project[] = [
     category: "Geophysics",
     shortDescription: "Data-driven earthquake modeling and simulation contributing to peer-reviewed publication",
     description: "Developed and analyzed Epidemic Type Aftershock Sequence (ETAS) models to simulate millions of earthquakes and study information entropy in earthquake catalogs. Work contributed to a peer-reviewed publication and an honors thesis on data-driven earthquake nowcasting.",
-    image: "/projects/pics/ETAS.png",
+    image: `${base}projects/pics/ETAS.png`,
     technologies: ["ETAS", "Earthquake Simulation", "Python", "Geophysics", "Machine Learning", "Data Analysis"],
     duration: "April 2022 — June 2024",
     role: "Research Assistant",
