@@ -42,10 +42,14 @@ export function Home() {
                   Get In Touch
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors flex items-center justify-center gap-2">
+                <a
+                  href={`${import.meta.env.BASE_URL}Tianjian_Zhang_resume.pdf`}
+                  download="Tianjian_Zhang_resume.pdf"
+                  className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors flex items-center justify-center gap-2"
+                >
                   <Download className="w-5 h-5" />
-                  Download CV
-                </button>
+                  Download Resume
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -615,6 +619,20 @@ export function Home() {
               </form>
             )}
           </div>
+        </div>
+      </section>
+
+      {/* Resume Download Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <a
+            href={`${import.meta.env.BASE_URL}Tianjian_Zhang_resume.pdf`}
+            download="Tianjian_Zhang_resume.pdf"
+            className="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-semibold"
+          >
+            <Download className="w-5 h-5" />
+            Download My Resume
+          </a>
         </div>
       </section>
     </div>
